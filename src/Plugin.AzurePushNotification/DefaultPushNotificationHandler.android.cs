@@ -11,9 +11,9 @@ using Android.Graphics;
 using Android.Media;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Core.App;
 using Java.Util;
 
 namespace Plugin.AzurePushNotification

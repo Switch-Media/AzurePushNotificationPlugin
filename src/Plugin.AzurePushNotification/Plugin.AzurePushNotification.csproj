@@ -62,11 +62,12 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.2.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Azure.NotificationHubs.Android" Version="0.6.0" />
-    <PackageReference Include="Xamarin.Firebase.Messaging" Version="71.1740.0" />
-    <PackageReference Include="Xamarin.GooglePlayServices.Tasks" Version="71.1601.0" />
+    <PackageReference Include="Xamarin.Firebase.Messaging" Version="119.0.1-preview03" />
+    <PackageReference Include="Xamarin.Firebase.Encoders.JSON" Version="116.1.0-preview01" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Tasks" Version="117.0.0-preview03" />
     <Compile Include="**\*.android.cs" />
     <Compile Include="**\*.android.*.cs" />
   </ItemGroup>
