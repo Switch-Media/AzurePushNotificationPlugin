@@ -4,23 +4,6 @@
 
 First, make sure you setup everthing on Firebase portal and Azure portal.
 
-Edit AndroidManifest.xml and insert the following receiver elements **inside** the **application** section:
-
-```xml
-<receiver 
-    android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" 
-    android:exported="false" />
-<receiver 
-    android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" 
-    android:exported="true" 
-    android:permission="com.google.android.c2dm.permission.SEND">
-    <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-        <category android:name="${applicationId}" />
-    </intent-filter>
-</receiver>
-```
 Also add this permission:
 
 ```xml
@@ -144,11 +127,11 @@ On Info.plist enable remote notification background mode
 
 There are 3 overrides to **AzurePushNotificationManager.Initialize**:
 
-- **AzurePushNotificationManager.Initialize(string notificationHubConnectionString,string notificationHubPathName, NSDictionary options,bool autoRegistration,bool autoRegistration)** : Default method to initialize plugin without supporting any user notification categories. Auto registers for push notifications if second parameter is true.
+- **AzurePushNotificationManager.Initialize(string notificationHubConnectionString,string notificationHubPathName, NSDictionary options,bool autoRegistration,bool autoRegistration, bool enableDelayedResponse)** : Default method to initialize plugin without supporting any user notification categories. Auto registers for push notifications if second parameter is true.
 
-- **AzurePushNotificationManager.Initialize(string notificationHubConnectionString,string notificationHubPathName,NSDictionary options, NotificationUserCategory[] categories,bool autoRegistration)**  : Initializes plugin using user notification categories to support iOS notification actions.
+- **AzurePushNotificationManager.Initialize(string notificationHubConnectionString,string notificationHubPathName,NSDictionary options, NotificationUserCategory[] categories,bool autoRegistration, bool enableDelayedResponse)**  : Initializes plugin using user notification categories to support iOS notification actions.
 
-- **AzurePushNotificationManager.Initialize(string notificationHubConnectionString,string notificationHubPathName,NSDictionary options,IPushNotificationHandler pushHandler,bool autoRegistration)** : Initializes the plugin using a custom push notification handler to provide native feedback of notifications event on the native platform.
+- **AzurePushNotificationManager.Initialize(string notificationHubConnectionString,string notificationHubPathName,NSDictionary options,IPushNotificationHandler pushHandler,bool autoRegistration, bool enableDelayedResponse)** : Initializes the plugin using a custom push notification handler to provide native feedback of notifications event on the native platform.
 
 
 Call  **AzurePushNotificationManager.Initialize** on AppDelegate FinishedLaunching

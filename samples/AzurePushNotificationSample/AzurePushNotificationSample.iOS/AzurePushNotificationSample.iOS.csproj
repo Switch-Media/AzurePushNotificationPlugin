@@ -125,14 +125,17 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.AzurePushNotification">
-      <Version>1.1.0</Version>
+      <Version>2.0.18</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+    <PackageReference Include="Xamarin.Azure.NotificationHubs.iOS">
+      <Version>2.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\AzurePushNotificationSample\AzurePushNotificationSample.csproj">
-      <Project>{AACAA479-67C5-4E3D-B60A-957A9A96DF94}</Project>
+      <Project>{D752C30D-5472-46DE-8256-E959BFF373FD}</Project>
       <Name>AzurePushNotificationSample</Name>
     </ProjectReference>
   </ItemGroup>
