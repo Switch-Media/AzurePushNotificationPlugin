@@ -518,6 +518,7 @@ namespace Plugin.AzurePushNotification
 
         internal static void InternalSaveToken(string token)
         {
+            DeviceToken = token;
             var editor = Application.Context.GetSharedPreferences(KeyGroupName, FileCreationMode.Private).Edit();
             editor.PutString(TokenKey, token);
             editor.Commit();
